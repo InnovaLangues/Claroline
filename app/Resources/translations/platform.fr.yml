@@ -411,7 +411,7 @@ my_notes: 'Mes notes'
 my_portfolio: 'Mon portfolio'
 my_profile: 'Mon profil'
 my_resources: 'Mes ressources'
-my_workspace: 'Espace personnel'
+my_workspace: 'Espace de %username%'
 my_workspaces: 'Mes formations'
 name: Nom
 new: Nouveau
