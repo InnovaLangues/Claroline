@@ -51,7 +51,10 @@
         {% else %}
             {% set workspacesName =  'workspaces' %}
         {% endif %}
-        {{ topbar.item({'name':workspacesName, 'icon':'book', 'route':'/workspaces/', 'dropdown':block('dropdownWorkspace')}) }}
+
+        {% if isLogged %}
+            {{ topbar.item({'name':workspacesName, 'icon':'book', 'route':'/workspaces/', 'dropdown':block('dropdownWorkspace')}) }}
+        {% endif %}
     {% endblock rightSide %}
 
     {% block login %}
