@@ -85,7 +85,7 @@ add_tag: 'Ajouter un Tag'
 add_tag_to_workspace: 'Ajouter un Tag à la formation'
 add_user: 'Ajouter un utilisateur'
 add_user_s_confirm_message: 'utilisateur(s) ajouté(s)'
-add_users: 'Ajouter des utilisateurs'
+add_users: 'Inscrire des utilisateurs à cette formation'
 add_widget_to_home_tab: 'Ajouter un widget à l''onglet'
 add_workspace: 'Ajouter une formation'
 admin: Administrateur
@@ -98,7 +98,7 @@ admin_workspace_tag_form_name: Nom
 administration: Administration
 administrative_code: 'Code administratif'
 advanced: Avancé
-agenda: Agenda
+agenda: Agenda de la formation
 all: Tous
 all_available_workspaces: 'Toutes les formations disponibles'
 all_my_workspaces: 'Toutes mes formations'
@@ -402,7 +402,7 @@ month.October: Octobre
 month.September: Septembre
 move: Déplacer
 my_account: 'Mon compte'
-my_agenda: 'Mon agenda'
+my_agenda: 'Agenda de mon espace personnel'
 my_applications: 'Mes applications'
 my_badges: 'Mes badges'
 my_contacts: 'Mes contacts'
