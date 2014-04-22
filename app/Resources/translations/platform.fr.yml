@@ -458,7 +458,7 @@ password_ok: 'Votre mot de passe a été modifié. Vous pouvez maintenant vous c
 paste: Coller
 path: Emplacement
 permissions: Permissions
-personal_workspace: 'Espace personnel'
+personal_workspace: 'Espace de '
 phone: Téléphone
 platform_appearance: 'Apparence de la plateforme'
 platform_parameters: 'Paramètres de la plateforme'
