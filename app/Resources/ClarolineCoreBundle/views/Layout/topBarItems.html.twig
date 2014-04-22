@@ -26,6 +26,7 @@
             {{ topbar.item({'name':'home', 'href':path('claro_index'), 'icon':'home'}) }}
         {% endif %}
         {{ topbar.item({'href':path('claro_desktop_open'), 'icon':'briefcase', 'route':'/desktop/tool/', 'title': 'desktop' | trans({}, 'platform')}) }}
+        {{ topbar.item({'href':path('innova_support_new'), 'icon':'bug', 'route':'/support/new', 'title': 'bug_request' | trans({}, 'platform')}) }}
         {% if is_granted('ROLE_ADMIN') %}
             {{ topbar.item({'href':path('claro_admin_parameters_index'), 'icon':'cog', 'route':'/admin/', 'title':'administration' | trans({}, 'platform')}) }}
         {% endif %}
