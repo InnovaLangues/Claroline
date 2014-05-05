@@ -116,7 +116,7 @@
         {{ topbar.item({'name':'my_profile', 'href':path('claro_profile_view'), 'icon':'user'}) }}
 <li class="divider"></li>
         {% if personalWs is not null %}
-            {{ topbar.item({'name':'my_workspace', 'href':path('claro_workspace_open_tool', {'workspaceId': personalWs.getId(), 'toolName': 'home'}), 'icon':'book'}) }}
+            {{ topbar.item({'name': 'my_workspace'|trans({'%username%': username}, 'platform'), 'href':path('claro_workspace_open_tool', {'workspaceId': personalWs.getId(), 'toolName': 'home'}), 'icon':'book'}) }}
         {% endif %}
         {{ topbar.item({'name':'my_agenda', 'href':path('claro_desktop_open_tool', {'toolName': 'agenda' }), 'icon':'calendar'}) }}
         {{ topbar.item({'name':'my_resources', 'href':path('claro_desktop_open_tool', {'toolName': 'resource_manager'}) ~ '#resources/0', 'icon':'folder-close'}) }}
