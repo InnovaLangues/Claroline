@@ -406,12 +406,12 @@ my_agenda: 'Agenda de mon espace personnel'
 my_applications: 'Mes applications'
 my_badges: 'Mes badges'
 my_contacts: 'Mes contacts'
-my_favourite_workspaces: 'Mes formations favoris'
+my_favourite_workspaces: 'Mes formations favorites'
 my_notes: 'Mes notes'
 my_portfolio: 'Mon portfolio'
 my_profile: 'Mon profil'
 my_resources: 'Mes ressources'
-my_workspace: 'Espace personnel'
+my_workspace: 'Espace de %username%'
 my_workspaces: 'Mes formations'
 name: Nom
 new: Nouveau
@@ -458,7 +458,7 @@ password_ok: 'Votre mot de passe a été modifié. Vous pouvez maintenant vous c
 paste: Coller
 path: Emplacement
 permissions: Permissions
-personal_workspace: 'Espace personnel'
+personal_workspace: 'Espace de '
 phone: Téléphone
 platform_appearance: 'Apparence de la plateforme'
 platform_parameters: 'Paramètres de la plateforme'
@@ -663,7 +663,7 @@ top_resources_views: 'Top des resources les plus consultés'
 top_users_connections: 'Top des utilisateurs s''étant les plus connectés'
 top_users_workspaces_enrolled: 'Top des utilisateurs étant inscrits dans le plus de modules'
 top_users_workspaces_owners: 'Top des utilisateurs ayant crée le plus de modules'
-top_workspaces_connections: 'Top des formations les plus consultés'
+top_workspaces_connections: 'Top des formations les plus consultées'
 top_workspaces_resources: 'Top des formations avec le plus des resources'
 total: Total
 trash: Corbeille
@@ -771,7 +771,7 @@ workspace_tools: Outils
 workspace_unregistration_confirm_title: 'Voulez-vous vous désinscrire de cette formation ?'
 workspace_welcome: Accueil
 workspaces: Formations
-workspaces_included_in_category: 'Formations enregistrés dans cette catégorie'
+workspaces_included_in_category: 'Formations enregistrées dans cette catégorie'
 workspaces_management: Gestions des formations
 workspaces_per_page: 'Formations par page'
 ws_creator: Créateur de formation

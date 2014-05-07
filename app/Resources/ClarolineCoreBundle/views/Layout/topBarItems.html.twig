@@ -26,6 +26,7 @@
             {{ topbar.item({'name':'home', 'href':path('claro_index'), 'icon':'home'}) }}
         {% endif %}
         {{ topbar.item({'href':path('claro_desktop_open'), 'icon':'briefcase', 'route':'/desktop/tool/', 'title': 'desktop' | trans({}, 'platform')}) }}
+        {{ topbar.item({'href':path('innova_support_new'), 'icon':'bug', 'route':'/support/new', 'title': 'bug_request' | trans({}, 'platform')}) }}
         {% if is_granted('ROLE_ADMIN') %}
             {{ topbar.item({'href':path('claro_admin_parameters_index'), 'icon':'cog', 'route':'/admin/', 'title':'administration' | trans({}, 'platform')}) }}
         {% endif %}
@@ -51,7 +52,10 @@
         {% else %}
             {% set workspacesName =  'workspaces' %}
         {% endif %}
-        {{ topbar.item({'name':workspacesName, 'icon':'book', 'route':'/workspaces/', 'dropdown':block('dropdownWorkspace')}) }}
+
+        {% if isLogged %}
+            {{ topbar.item({'name':workspacesName, 'icon':'book', 'route':'/workspaces/', 'dropdown':block('dropdownWorkspace')}) }}
+        {% endif %}
     {% endblock rightSide %}
 
     {% block login %}
@@ -68,8 +72,9 @@
 
     {% block logged %}
         {% import _self as topbar %}
+        {% set username = app.user.username %}
         {% set user = username | length > 16 ? username | slice(0, 16) ~ '...' : username %}
-        {{ topbar.item({'name':username, 'icon':'user', 'route':'/profile', 'dropdown':block('dropdownLogged')}) }}
+        {{ topbar.item({'name':user, 'icon':'user', 'route':'/profile', 'dropdown':block('dropdownLogged')}) }}
     {% endblock logged %}
 
     {% block dropdownWorkspace %}
@@ -111,7 +116,7 @@
         {{ topbar.item({'name':'my_profile', 'href':path('claro_profile_view'), 'icon':'user'}) }}
 <li class="divider"></li>
         {% if personalWs is not null %}
-            {{ topbar.item({'name':'my_workspace', 'href':path('claro_workspace_open_tool', {'workspaceId': personalWs.getId(), 'toolName': 'home'}), 'icon':'book'}) }}
+            {{ topbar.item({'name': 'my_workspace'|trans({'%username%': username}, 'platform'), 'href':path('claro_workspace_open_tool', {'workspaceId': personalWs.getId(), 'toolName': 'home'}), 'icon':'book'}) }}
         {% endif %}
         {{ topbar.item({'name':'my_agenda', 'href':path('claro_desktop_open_tool', {'toolName': 'agenda' }), 'icon':'calendar'}) }}
         {{ topbar.item({'name':'my_resources', 'href':path('claro_desktop_open_tool', {'toolName': 'resource_manager'}) ~ '#resources/0', 'icon':'folder-close'}) }}
