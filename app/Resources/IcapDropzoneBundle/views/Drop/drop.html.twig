@@ -10,22 +10,31 @@
 {% endblock %}
 
 {% block dropzone_content %}
-<style>
-.dropzone-form-control-reduced
-{
-    width: 80%;
-}
-.dropzone-form-clean
-{
-    clear:both;
-}
+    <style>
+        .dropzone-form-control-reduced
+        {
+            width: 80%;
+        }
+        .dropzone-form-clean
+        {
+            clear:both;
+        }
 
-.dropzone_button_textarea
-{
-    float: left;
-    display: block;
-}
-</style>
+        .dropzone_button_textarea
+        {
+            float: left;
+            display: block;
+        }
+
+        #modal-dialog-resource {
+            width: 90%;
+            height:200px;
+        }
+
+        #resource-iframe {
+            border:none;
+        }
+    </style>
     <div class="container">
         <h3>{{ 'Make my copy'|trans({}, 'icap_dropzone') }}</h3>
 
