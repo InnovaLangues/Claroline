@@ -40,7 +40,7 @@
 
         {% set activeClass = " active " %}
 
-        <div class="tab-content">
+        <div id="add-document-forms" class="tab-content">
             {% if 'url' in allowedTypes %}
                 <div class="tab-pane {{ activeClass }}" id="url-tab">
                     {% include 'IcapDropzoneBundle:Document:documentForm.html.twig' with {'form':form_url, 'documentType': 'url'}%}

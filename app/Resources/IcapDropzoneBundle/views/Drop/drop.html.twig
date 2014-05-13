@@ -26,13 +26,14 @@
             display: block;
         }
 
-        #modal-dialog-resource {
-            width: 90%;
-            height:200px;
+        #add-document-forms .tab-pane
+        {
+            padding-top: 30px;
         }
 
-        #resource-iframe {
-            border:none;
+        .resource-link
+        {
+            cursor: pointer;
         }
     </style>
     <div class="container">
@@ -85,7 +86,6 @@
                                 </div>
                                 <div class="modal-footer">
                                     <a href="#" class="btn btn-default" data-dismiss="modal">{{ 'Cancel'|trans({}, 'icap_dropzone') }}</a>
-
                                     <button type="submit" class="btn btn-primary pull-right">
                                         {{ 'Confirm and finished'|trans({}, 'icap_dropzone') }}
                                     </button>
@@ -93,12 +93,11 @@
                             </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-
                 </div>
             </div>
             {{ form_end(form) }}
-
-        <br/>
+            <br />
+        </form>
     </div>
 
     <div id="picker-wrapper"></div>
@@ -106,39 +105,6 @@
 
 {% block javascripts %}
     {{ parent() }}
-
-    <script>
-
-        $(document).ready(function () {
-            'use strict';
-            var iframe = $('#resource-iframe');
-            var modal = $('#resource-modal');
-
-            $('a.resource-link').on('click', function (event) {
-                var resourceUrl = $(this).attr('data-target');
-
-                if (!$(this).hasClass("file")){
-                    modal.modal('show');
-                    
-                    if ($('#resource-iframe').attr('src') != resourceUrl){
-                        iframe.contents().find("body").html('');
-                        iframe.attr('src', resourceUrl);
-                    }
-                } else { $(this).attr("href",resourceUrl); }
-            });
-
-            iframe.on('load', function () {
-                resizeIframe($(this));
-            });
-        });
-
-        function resizeIframe(frame){
-            var modale = frame.parents('.modal-content').first();
-            var frameHeight = frame.contents().find("#wrap > .container").height();
-            frame.animate({ height: frameHeight }, 200, function() {});
-            modale.animate({ height: frameHeight + 150}, 200, function() {});
-        }
-    </script>
 
     {% javascripts debug=false output='vendor/twbs/bootstrap/js/change_me.js'
         '../vendor/twbs/bootstrap/js/modal.js'
