@@ -1,0 +1,35 @@
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            {% if config.getParameter('footer') != '' %}
+                <p>
+                    {{ config.getParameter('footer') }}
+                    <span class="pull-right">
+                        
+                        Powered by <a href="http://www.claroline.net">Claroline</a>
+                        /
+                        {% if app.user != null %}
+                            <a href="{{path('innova_support_new')}}" title="{{'bug_request' | trans({}, 'platform')}}">
+                                <i class="fa fa-2x fa-question-circle pull-right"></i>                                         
+                            </a>
+                        {% endif %}
+                        <span class="locale-select label label-default">{{ app.request.locale | upper }}</span>
+                    </span>
+                </p>
+            {% else %}
+                <p>
+                    Powered by <a href="http://www.claroline.net">Claroline</a>
+                    /
+                    {% if app.user != null %}
+                        <a href="{{path('innova_support_new')}}" title="{{'bug_request' | trans({}, 'platform')}}">
+                            <i class="fa fa-2x fa-question-circle"></i>                                         
+                        </a>
+                    {% endif %}
+                    <span class="pull-right locale-select label label-default">                       
+                        {{ app.request.locale | upper }}
+                    </span>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
