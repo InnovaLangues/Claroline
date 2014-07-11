@@ -5,7 +5,7 @@
             {% if params.href is defined and params.href is not empty %}href="{{ params.href }}"{% endif %}
             {% if params.title is defined and params.title is not empty %}title="{{ params.title }}"{% endif %}
             >
-            {% if params.icon is defined and params.icon is not empty %}<i class="icon-{{ params.icon }}"></i> {% endif %}
+            {% if params.icon is defined and params.icon is not empty %}<i class="fa fa-{{ params.icon }}"></i> {% endif %}
             <span {% if params.breakhide is defined %}class="break-hide"{% endif %}>
                 {% if params.name is defined %} {{ params.name | trans({}, 'platform') }} {% endif %}
             </span>
@@ -29,7 +29,6 @@
             {{ topbar.item({'name':'home', 'href':path('claro_index'), 'icon':'home'}) }}
         {% endif %}
         {{ topbar.item({'name': 'desktop', 'breakhide': true, 'href':path('claro_desktop_open'), 'icon':'briefcase', 'route':'/desktop/tool/', 'title': 'desktop' | trans({}, 'platform')}) }}
-        {{ topbar.item({'href':path('innova_support_new'), 'icon':'bug', 'route':'/support/new', 'title': 'bug_request' | trans({}, 'platform')}) }}
         {% if canAdministrate == true %}
             {{ topbar.item({'name': 'administration', 'breakhide': true, 'href':path('claro_admin_index'), 'icon':'cog', 'route':'/admin/', 'title':'administration' | trans({}, 'platform')}) }}
         {% endif %}
@@ -39,9 +38,9 @@
             {{ topbar.item({'name': 'messages', 'breakhide': true, 'href':path('claro_message_list_received'), 'icon':'envelope', 'route':'/message/', 'title':'new_message_alert' | trans({'%count%': countUnreadMessages}, 'platform')}) }}
         {% endif %}
         {% if countUnviewedNotifications > 0 %}
-            {{ topbar.item({'name': 'notifications', 'breakhide': true, 'id':'notification-topbar-item', 'href':path('icap_notification_view'), 'icon':'bell-alt', 'route':'/icap_notification/', 'title':'notifications', 'badge' : countUnviewedNotifications}) }}
+            {{ topbar.item({'name': 'notifications', 'breakhide': true, 'id':'notification-topbar-item', 'href':path('icap_notification_view'), 'icon':'bell', 'route':'/icap_notification/', 'title':'notifications', 'badge' : countUnviewedNotifications}) }}
         {% else %}
-            {{ topbar.item({'name': 'notifications', 'breakhide': true, 'id':'notification-topbar-item', 'href':path('icap_notification_view'), 'icon':'bell-alt', 'route':'/icap_notification/', 'title':'notifications'}) }}
+            {{ topbar.item({'name': 'notifications', 'breakhide': true, 'id':'notification-topbar-item', 'href':path('icap_notification_view'), 'icon':'bell', 'route':'/icap_notification/', 'title':'notifications'}) }}
         {% endif %}
         {% if '/icap_notification/'|compareRoute('true') is empty %}
             {% include "IcapNotificationBundle:Notification:dropdownScript.html.twig" with {'notificationElementId':'notification-topbar-item'} %}
@@ -78,6 +77,7 @@
         {% set username = app.user.username %}
         {% set user = username | length > 16 ? username | slice(0, 16) ~ '...' : username %}
         {{ topbar.item({'name':user, 'icon':'user', 'route':'/profile', 'dropdown':block('dropdownLogged')}) }}
+        {{ topbar.item({'href':path('innova_support_new'), 'icon':'question-circle', 'route':'/support/new', 'title': 'bug_request' | trans({}, 'platform')}) }}
     {% endblock logged %}
 
     {% block dropdownWorkspace %}
@@ -122,7 +122,7 @@
             {{ topbar.item({'name': 'my_workspace'|trans({'%username%': username}, 'platform'), 'href':path('claro_workspace_open_tool', {'workspaceId': personalWs.getId(), 'toolName': 'home'}), 'icon':'book'}) }}
         {% endif %}
         {{ topbar.item({'name':'my_agenda', 'href':path('claro_desktop_open_tool', {'toolName': 'agenda' }), 'icon':'calendar'}) }}
-        {{ topbar.item({'name':'my_resources', 'href':path('claro_desktop_open_tool', {'toolName': 'resource_manager'}) ~ '#resources/0', 'icon':'folder-close'}) }}
+        {{ topbar.item({'name':'my_resources', 'href':path('claro_desktop_open_tool', {'toolName': 'resource_manager'}) ~ '#resources/0', 'icon':'folder'}) }}
         {{ topbar.item({'name':'my_badges', 'href':path('claro_profile_view_badges'), 'icon':'trophy'}) }}
         <li role="presentation" class="divider"></li>
         {% if isImpersonated %}
@@ -130,8 +130,7 @@
         {% else %}
             {% set logoutPath = path('claro_security_logout') %}
         {% endif %}
-        {{ topbar.item({'name':'logout', 'href':logoutPath, 'icon':'off', id:"btn-logout"}) }}
-
+        {{ topbar.item({'name':'logout', 'href':logoutPath, 'icon':'power-off', id:"btn-logout"}) }}
     {% endblock dropdownLogged %}
 
 {% endblock topBar %}
