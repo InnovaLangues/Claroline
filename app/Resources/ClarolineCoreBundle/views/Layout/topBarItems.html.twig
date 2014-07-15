@@ -10,7 +10,6 @@
                 {% if params.name is defined %} {{ params.name | trans({}, 'platform') }} {% endif %}
             </span>
             {% if params.badge is defined and params.badge is not empty %}<span class="badge">{{ params.badge }}</span>{% endif %}
-            {% if params.name is defined %} {{ params.name | trans({}, 'platform') }} {% endif %}
             {% if (params.dropdown is defined and params.dropdown is not empty) and (params.hideArrow is not defined or params.hideArrow is empty) %}<i class="caret"></i>{% endif %}
         </a>
         {% if params.dropdown is defined and params.dropdown is not empty %}
