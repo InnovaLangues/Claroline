@@ -17,6 +17,7 @@
         "claroline/pdf-player-bundle": "~2.0",
         "claroline/rss-reader-bundle": "~3.0",
         "claroline/video-player-bundle": "~2.0",
+        "claroline/web-resource-bundle": "~2.0",
         "icap/dropzone-bundle": ">=0.1.1,<2.0",
         "composer/composer": "dev-master",
         "innova/path-bundle": "~2.0",
