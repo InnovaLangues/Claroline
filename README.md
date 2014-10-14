@@ -72,6 +72,8 @@ Project setup
     Claroline\CoreBundle\Library\Maintenance\MaintenanceHandler is not 
     autoloadable, can not call pre-update-cmd script*
 </sub>
+
+
 <sub> (2) At this point, if you have this kind of "general error" : *
 [Doctrine\DBAL\DBALException]                                                             
   An exception occurred while executing '                                                   
