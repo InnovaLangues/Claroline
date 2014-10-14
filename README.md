@@ -66,11 +66,17 @@ Project setup
     - `$ composer require claroline/bundle-recorder "~3.0"`
     - `$ cp composer.json.dist composer.json`
     - `$ composer update --prefer-source` <sub>(1)</sub> 
-    - `$ php app/console claroline:update`
+    - `$ php app/console claroline:update` <sub>(2)</sub>
 
 <sub> (1) At this point, you can ignore the following error: *Class 
     Claroline\CoreBundle\Library\Maintenance\MaintenanceHandler is not 
     autoloadable, can not call pre-update-cmd script*
+</sub>
+<sub> (2) At this point, if you have this kind of "general error" : *
+[Doctrine\DBAL\DBALException]                                                             
+  An exception occurred while executing '                                                   
+              ALTER TABLE icap__portfolio_users  *
+, then modidy the order of plugins in /app/config/operations.xml and put ClarolineBundle in first position.
 </sub>
 
 You can then create a first admin user with:
